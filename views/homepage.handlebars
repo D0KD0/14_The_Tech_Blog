@@ -1,0 +1,16 @@
+{{#each blogs as |blog| }}
+<div class="px-5 py-3">
+    <a class="text-decoration-none" href="/blogs/{{blog.id}}">
+        <div class="border border-5 border-dark">
+            <div class="card-header d-flex flex-row justify-content-between"
+                style="background-color: rgb(32,17,16); color: rgb(223,233,213);">
+                <h4 >{{blog.title}}</h4>
+                <p >Posted by {{blog.user.name}} on {{format_date blog.date_created}}</p>
+            </div>
+            <div class="card-body" style="background-color: rgb(223,233,213);">
+                <p class="card-text text-dark">{{blog.content}}</p>
+            </div>
+        </div>
+    </a>
+</div>
+{{/each}}

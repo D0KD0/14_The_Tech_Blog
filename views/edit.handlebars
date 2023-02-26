@@ -1,0 +1,28 @@
+<div class="p-5">
+    <div class="border border-5 border-dark">
+        <div class="card-heade" style="background-color: rgb(32,17,16); color: rgb(223,233,213);">
+            <h2 class="p-3">Edit Post</h2>
+        </div>
+        <div class="card-body" style="background-color: rgb(223,233,213);"> 
+            <div class="text-danger" id="errors"></div>
+            <input type="hidden" id="blogID" value="{{blog.id}}"/>
+            <form class="form edit-form">
+                <div class="form-outline">
+                    <label class="form-label" for="title-edit">Title</label>
+                    <input class="form-control" type="text" id="title-edit" value="{{blog.title}}"/>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="content-edit">Content</label>
+                    <textarea class="form-control" id="content-edit" >{{blog.content}}</textarea>
+                </div>
+                <div class="form-group">
+                    <button class="btn" type="submit" id="updateBtn" style="background-color: rgb(32,17,16); color: rgb(223,233,213);">Update Post</button>
+                    <button class="btn" type="button" id="deleteBtn" style="background-color: rgb(32,17,16); color: rgb(223,233,213);">Delete</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="../../js/edit.js"></script>

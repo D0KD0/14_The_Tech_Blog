@@ -1,0 +1,51 @@
+{{#each blogs as |blog| }}
+<div class="px-5 py-3">
+    <a class="text-decoration-none" href="dashboard/edit/{{blog.id}}">
+        <div class="d-flex flex-row justify-content-between align-items-center p-2 rounded"
+            style="background-color: rgb(32,17,16); color: rgb(223,233,213);">
+            <h4 class="">{{blog.title}}</h4>
+            <h4 class="">{{format_date blog.date_created}}</h4>
+        </div>
+    </a>
+</div>
+{{/each}}
+
+<div class="text-center">
+    <!-- Button trigger modal -->
+    <button class="btn rounded m-4" data-toggle="modal" data-target="#newPostModal" type="button"
+        style="font-size: 1.6rem; background-color: rgb(32,17,16); color: rgb(223,233,213); ">New Post</button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="newPostModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: rgb(32,17,16); color: rgb(223,233,213);">
+                <h5 class="modal-title" id="exampleModalLongTitle">Create New Post</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"> - </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="form createBlog-form">
+                    <div class="form-outline">
+                        <label class="form-label" for="title">Title</label>
+                        <input class="form-control" type="text" id="title" />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="content">Content</label>
+                        <textarea class="form-control" id="content"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn" type="submit"
+                            style="background-color: rgb(32,17,16); color: rgb(223,233,213);">Post</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../js/createBlog.js"></script>

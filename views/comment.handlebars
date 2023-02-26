@@ -1,0 +1,50 @@
+<div class="px-5 py-3">
+    <div class="border border-5 border-dark">
+        <div class="card-header d-flex flex-row justify-content-between"
+            style="background-color: rgb(32,17,16); color: rgb(223,233,213);">
+            <h4>{{blog.title}}</h4>
+            <p>Posted by {{blog.user.name}} on {{format_date blog.date_created}}</p>
+        </div>
+        <div class="card-body" style="background-color: rgb(223,233,213);">
+            <p class="card-text text-dark">{{blog.content}}</p>
+        </div>
+    </div>
+</div>
+
+
+{{#each comments as |comment|}}
+<div class="px-5 py-3">
+    <div class="border border-5 border-dark">
+        <div class="card-header d-flex flex-row justify-content-between"
+            style="background-color: rgb(32,17,16); color: rgb(223,233,213);">
+        </div>
+        <div class="card-body" style="background-color: rgb(223,233,213);">
+            <p class="card-text text-dark">{{comment.content}}</p>
+            <p>-{{comment.user.name}},  {{format_date comment.date_created}}</p>
+        </div>
+    </div>
+</div>
+{{/each}}
+
+
+<div class="px-5 py-3">
+    <div class="border border-5 border-dark">
+        <div class="card-header d-flex flex-row justify-content-between"
+            style="background-color: rgb(32,17,16); color: rgb(223,233,213);">
+        </div>
+        <div class="card-body" style="background-color: rgb(223,233,213);">
+            <form class="form comment-form">
+                <input type="hidden" id="blogID" value="{{blog.id}}">
+                <div class="form-group">
+                    <label class="form-label" for="comment">Comment</label>
+                    <textarea class="form-control" id="comment" ></textarea>
+                </div>
+                <div class="form-group">
+                    <button class="btn" type="submit" id="commentBtn" style="background-color: rgb(32,17,16); color: rgb(223,233,213);">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="../../js/createComment.js"></script>
